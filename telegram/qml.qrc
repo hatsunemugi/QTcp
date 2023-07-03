@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Chat_.qml</file>
+        <file>qml/Chats_.qml</file>
+        <file>qml/Config_.qml</file>
+        <file>qml/File_process.qml</file>
+        <file>qml/Icon_.qml</file>
+        <file>qml/Ipv4_255.qml</file>
+        <file>qml/Ipv4_input.qml</file>
+        <file>qml/LineEdit.qml</file>
+        <file>qml/Main.qml</file>
+        <file>qml/MouseArea_.qml</file>
+        <file>qml/Mutichat_.qml</file>
+        <file>qml/Peer_.qml</file>
+        <file>qml/Rectangle_color.qml</file>
+        <file>qml/Refresh.qml</file>
+        <file>qml/SideBar.qml</file>
+        <file>qml/Text_.qml</file>
+        <file>qml/ToolBar.qml</file>
+        <file>qml/ToolBar_model.qml</file>
+        <file>qml/img/detail.svg</file>
+        <file>qml/img/keyboard.svg</file>
+        <file>qml/img/plus.svg</file>
+        <file>qml/img/refresh.svg</file>
+        <file>qml/img/return.svg</file>
+        <file>qml/img/voice.svg</file>
+        <file>qml/img/wifi.svg</file>
+        <file>qml/img/wifi-off-line.svg</file>
+        <file>qml/ToolBar_.qml</file>
+        <file>qml/FileDialog_.qml</file>
+        <file>qml/Log_.qml</file>
+        <file>android/AndroidManifest.xml</file>
+        <file>qml/Rectangle_resize.qml</file>
+        <file>qml/Popup_.qml</file>
+        <file>qml/Console.qml</file>
+        <file>qml/Video_Chat.qml</file>
+    </qresource>
+</RCC>
