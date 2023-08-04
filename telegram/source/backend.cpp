@@ -16,7 +16,7 @@ BackEnd::BackEnd(QObject *parent)
     default_log=qInstallMessageHandler(log_);
     local=new Peer(this);
     local->gui=gui;
-
+    _port_ = "10086";
     file_tcp=new File(this);
 //    timer=new QTimer;
 
@@ -178,7 +178,7 @@ void BackEnd::connect_to(QString ip)
     int n=exists(ip);
     if(n<0)
     {
-        Peer* remote=new Peer(ip);
+        Peer* remote=new Peer(ip,_port_.toInt());
         remote->gui=gui;
         remote->host=local;
         remote->new_chat();

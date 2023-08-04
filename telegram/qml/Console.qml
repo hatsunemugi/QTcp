@@ -1,27 +1,24 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
-Window {
+Popup_ {
     id: root
-    x:320
-    y:640
-    width: 320
-    height: 32
-    visible: true
-    color: "#ffffff"
-    title: qsTr("console")
+    x: parent.width/8
+    height: 36
+    width: parent.width/2
     Rectangle {
+        color: "transparent"
+        border.width: 1
+        border.color: "black"
+        radius: 8
         anchors.fill: parent
-        TextEdit {
+        LineEdit {
             id: edit
-            anchors.horizontalCenter: parent.horizontalCenter
-//            canPaste: true
-//            canRedo: true
-//            canUndo: true
+            anchors.fill: parent
+            anchors.leftMargin: 8
+            anchors.rightMargin: icon.width
 
             wrapMode: Text.Wrap
-            width: parent.width
-            height: parent.height>contentHeight?parent.height:contentHeight
             onContentHeightChanged: {
                 if(root!=null)
                     if(contentHeight>root.height)
@@ -32,22 +29,32 @@ Window {
                 {
                 case Qt.Key_Return:{
                     backend.exec(edit.text)
+                    edit.text = ""
                     }break;
                 case Qt.Key_Enter:{
                     backend.exec(edit.text)
+                    edit.text = ""
                     }break;
                 }
 
             }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: parent.focus = !parent.focus
+            }
 
         }
         Icon_ {
-            x:root.width-width
+            id: icon
+            anchors.right: parent.right
+            anchors.rightMargin: 2
+            radius: 10
             source: "img/return.svg"
             onClick: {
                 backend.exec(edit.text)
+                edit.text = ""
+                edit.focus = false
             }
         }
     }
-
 }

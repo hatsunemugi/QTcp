@@ -19,6 +19,7 @@ class Peer : public QObject
 public:
     explicit Peer(QObject *parent = nullptr);
     Peer(QTcpSocket*);
+    Peer(QString,int);
     Peer(QString);
     ~Peer();
     void connect_from(QTcpSocket*);

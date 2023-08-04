@@ -91,6 +91,7 @@ Item {
             id: say_
             anchors.fill: parent
             readOnly: true
+            font.pointSize: 12
             text: "say"
         }
     }

@@ -6,8 +6,8 @@ import QtQuick.Window 2.15
 ApplicationWindow {
     x: 320
     y: 28
-    width: 640
-    height: 480
+    width: 960
+    height: 540
     visible: true
     color: "#ffffff"
     title: qsTr("telegram")

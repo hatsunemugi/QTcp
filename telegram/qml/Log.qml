@@ -4,7 +4,6 @@ import telegram 1.0
 
 Popup_ {
     id: root
-
     Connections {
         target: backend
         function onNew_log() {
@@ -32,6 +31,10 @@ Popup_ {
             radius: 8
             anchors.margins: 4
             height: 36
+            Console {
+                id: console_
+            }
+
             Icon_ {
                 id: detail
                 size: 24
@@ -43,9 +46,10 @@ Popup_ {
                 anchors.verticalCenter: parent.verticalCenter
                 source: 'img/detail.svg'
                 onClick: {
-                    var component = Qt.createComponent("Console.qml")
-                    var console = component.createObject()
-                    console.show()
+                    if(!console_.visible)
+                        console_.open()
+                    else
+                        console_.close()
                 }
             }
             Icon_ {

@@ -145,6 +145,7 @@ Popup {
                 anchors.leftMargin: 16
                 width: say_.contentWidth+8
                 height: say_.contentHeight+4
+                radius: 4
                 TextEdit {
                     id: say_
                     readOnly: true

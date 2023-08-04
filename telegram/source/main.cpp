@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 #ifdef Android_Platform
 //    // 添加读取权限，Android 6.0 版本后需要申请，不然的话，啥都看不到。
-    QtAndroidPrivate::requestPermission(QtAndroidPrivate::PermissionType::Storage);  // ok
+//    QtAndroidPrivate::requestPermission(QtAndroidPrivate::PermissionType::Storage);  // ok
 #endif
 
     QGuiApplication app(argc, argv);

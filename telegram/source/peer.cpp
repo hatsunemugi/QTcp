@@ -51,17 +51,15 @@ Peer::Peer(QTcpSocket *client_)
     });
 }
 
-Peer::Peer(QString ip_)
+Peer::Peer(QString ip_, int port_)
 {
     mode=mode::Client;
-    qDebug()<<ip_;
+    qDebug()<<ip_<<port_;
     ip=ip_;
-    port="10086";
-//    bInited=false;
-//    bIsFile=false;
+    port=QString::number(port_);
     client = new QTcpSocket(this);
     client->setProxy(QNetworkProxy::NoProxy);
-    client->connectToHost(QHostAddress(ip),port.toUShort());
+    client->connectToHost(QHostAddress(ip),port_);
     connection();
     connect(client,&QTcpSocket::connected,this,[&](){
         connected=true;
@@ -72,6 +70,11 @@ Peer::Peer(QString ip_)
         connected=false;
         client->close();
     });
+}
+
+Peer::Peer(QString ip_):Peer(ip_,10086)
+{
+
 }
 
 Peer::~Peer()
